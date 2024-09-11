@@ -138,7 +138,7 @@ export function Portfolio() {
                             {
                                 name: "E-commerce Platform",
                                 description: "A full-stack e-commerce solution with Next.js, PostgreSql, Cloudinary and Docker.",
-                                image: "/projects/tesloshop.png?height=200&width=300",
+                                image: "/projects/tesloshop.PNG?height=200&width=300",
                                 github: "https://github.com/samuelSoler99/ecommerce-platform",
                                 live: "https://next-14-tesla-shop.vercel.app/",
                                 technologies: ["Next", "PostgreSQL", "Stripe", "PrismaORM", "Tailwind", "Docker"]
@@ -146,7 +146,7 @@ export function Portfolio() {
                             {
                                 name: "Aliexpress Clone",
                                 description: "A Nuxt app that clone Aliexpress using stripe payments.",
-                                image: "/projects/alicone.png?height=200&width=300",
+                                image: "/projects/alicone.PNG?height=200&width=300",
                                 github: "https://github.com/samuelSoler99/aliexpress-clone",
                                 live: null,
                                 technologies: ["Nuxt", "PostgreSQL", "Stripe", "Tailwind", "Supabase", "PrismaORM"]
