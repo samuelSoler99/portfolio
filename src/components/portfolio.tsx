@@ -1,12 +1,12 @@
 'use client'
 
-import {Button} from "@/components/ui/button"
-import {Card, CardContent} from "@/components/ui/card"
-import {ExternalLinkIcon, GithubIcon, LinkedinIcon, MailIcon, MenuIcon} from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { AwardIcon, BookOpenIcon, ExternalLinkIcon, GithubIcon, LinkedinIcon, MailIcon, MenuIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import {useEffect} from "react"
-import {TechLogo} from "@/components/ui/techLogo";
+import { useEffect } from "react"
+import { TechLogo } from "@/components/ui/techLogo";
 import ContactForm from "@/components/contact-form";
 
 export function Portfolio() {
@@ -49,7 +49,7 @@ export function Portfolio() {
                         <Link href="#skills" className="hover:text-primary">Skills</Link>
                     </nav>
                     <Button variant="ghost" size="icon" className="md:hidden">
-                        <MenuIcon className="h-6 w-6"/>
+                        <MenuIcon className="h-6 w-6" />
                     </Button>
                 </div>
             </header>
@@ -58,7 +58,7 @@ export function Portfolio() {
                 <section id="about" className="mb-16 pt-16 scroll-mt-16">
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <Image
-                            src="/bin.jfif?height=300&width=300"
+                            src="/sam_pac.jpg?height=300&width=300"
                             alt="Samuel Soler"
                             width={300}
                             height={300}
@@ -74,13 +74,13 @@ export function Portfolio() {
                                 <ContactForm />
                                 <Link href="https://github.com/samuelSoler99" target="_blank" rel="noopener noreferrer">
                                     <Button variant="outline">
-                                        <GithubIcon className="mr-2 h-4 w-4"/> GitHub
+                                        <GithubIcon className="mr-2 h-4 w-4" /> GitHub
                                     </Button>
                                 </Link>
                                 <Link href="https://www.linkedin.com/in/samuel-soler-pic%C3%B3/" target="_blank"
-                                      rel="noopener noreferrer">
+                                    rel="noopener noreferrer">
                                     <Button variant="outline">
-                                        <LinkedinIcon className="mr-2 h-4 w-4"/> LinkedIn
+                                        <LinkedinIcon className="mr-2 h-4 w-4" /> LinkedIn
                                     </Button>
                                 </Link>
                             </div>
@@ -122,7 +122,7 @@ export function Portfolio() {
                                     <p className="mt-2 mb-4">{job.description}</p>
                                     <div className="flex flex-wrap gap-2 ">
                                         {job.technologies.map((tech, i) => (
-                                            <TechLogo key={i} name={tech}/>
+                                            <TechLogo key={i} name={tech} />
                                         ))}
                                     </div>
                                 </CardContent>
@@ -166,26 +166,26 @@ export function Portfolio() {
                                     <p>{project.description}</p>
                                     <div className="flex flex-wrap gap-2  mb-4">
                                         {project.technologies.map((tech, i) => (
-                                            <TechLogo key={i} name={tech}/>
+                                            <TechLogo key={i} name={tech} />
                                         ))}
                                     </div>
                                     <div className="flex justify-between items-center">
                                         <Link href={project.github} target="_blank" rel="noopener noreferrer">
                                             <Button variant="outline" size="sm">
-                                                <GithubIcon className="mr-2 h-4 w-4"/> View Repository
+                                                <GithubIcon className="mr-2 h-4 w-4" /> View Repository
                                             </Button>
                                         </Link>
                                         {project.live != null ? (
                                             <Link href={project.live} target="_blank" rel="noopener noreferrer">
                                                 <Button variant="outline" size="sm"
-                                                        className="text-green-500 hover:text-green-600">
-                                                    <ExternalLinkIcon className="mr-2 h-4 w-4"/> Live Demo
+                                                    className="text-green-500 hover:text-green-600">
+                                                    <ExternalLinkIcon className="mr-2 h-4 w-4" /> Live Demo
                                                 </Button>
                                             </Link>
                                         ) : (
                                             <Button variant="outline" size="sm"
-                                                    className="text-gray-400 hover:text-gray-500" disabled>
-                                                <ExternalLinkIcon className="mr-2 h-4 w-4"/> Not Live
+                                                className="text-gray-400 hover:text-gray-500" disabled>
+                                                <ExternalLinkIcon className="mr-2 h-4 w-4" /> Not Live
                                             </Button>
                                         )}
                                     </div>
@@ -199,13 +199,42 @@ export function Portfolio() {
                     <h2 className="text-3xl font-bold mb-8">Technologies & Skills</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {[
-                            "JavaScript", "TypeScript", "React", "Next.js",
+                            "PHP", "Symfony", "Laravel", "JavaScript", "TypeScript", "React", "Next.js",
                             "Node.js", "Express", "MongoDB", "PostgreSQL",
-                            "GraphQL", "REST APIs", "HTML5", "CSS3",
+                            "Hexagonal Architecture", "REST APIs", "TDD",
                             "Tailwind CSS", "Git", "Docker", "AWS"
                         ].map((skill, index) => (
                             <Card key={index} className="p-4 text-center">
                                 <p className="font-semibold">{skill}</p>
+                            </Card>
+                        ))}
+                    </div>
+                </section>
+
+                <section id="courses" className="pt-16 scroll-mt-16">
+                    <h2 className="text-3xl font-bold mb-8">Completed Udemy Courses</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                title: "Next.js - The react production framework",
+                                instructor: "Fernando Herrera",
+                                completionDate: "Marc 2024",
+                                certificate: "UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa",
+                                certificateLink: "https://www.udemy.com/certificate/UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa/"
+                            },
+                        ].map((course, index) => (
+                            <Card key={index}>
+                                <CardContent className="p-6">
+                                    <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
+                                    <p className="text-primary mb-1">Instructor: {course.instructor}</p>
+                                    <p className="text-sm text-muted-foreground mb-2">Completed: {course.completionDate}</p>
+                                    <p className="text-sm mb-4">Certificate: {course.certificate}</p>
+                                    <Link href={course.certificateLink} target="_blank" rel="noopener noreferrer">
+                                        <Button variant="outline" size="sm">
+                                            <AwardIcon className="mr-2 h-4 w-4" /> View Certificate
+                                        </Button>
+                                    </Link>
+                                </CardContent>
                             </Card>
                         ))}
                     </div>
