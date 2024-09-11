@@ -157,8 +157,8 @@ export function Portfolio() {
                                 <Image
                                     src={project.image}
                                     alt={project.name}
-                                    width={2000}
-                                    height={2000}
+                                    width={800}
+                                    height={800}
                                     className="w-full h-48 object-cover"
                                 />
                                 <CardContent className="p-4">
