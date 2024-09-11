@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export function TechLogo({name}: { name: string }) {
-    const logos: { [key: string] } = {
+    const logos: { [key: string]: { src: string, alt: string } } = {
         Sql: {
             src: "/logos/sql.svg",
             alt: "Sql"
