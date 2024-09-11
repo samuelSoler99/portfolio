@@ -218,7 +218,7 @@ export function Portfolio() {
                             {
                                 title: "Next.js - The react production framework",
                                 instructor: "Fernando Herrera",
-                                completionDate: "Marc 2024",
+                                completionDate: "March 2024",
                                 certificate: "UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa",
                                 certificateLink: "https://www.udemy.com/certificate/UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa/"
                             },
