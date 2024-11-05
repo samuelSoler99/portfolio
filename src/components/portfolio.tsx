@@ -46,7 +46,7 @@ export function Portfolio() {
                         <Link href="#about" className="hover:text-primary">About</Link>
                         <Link href="#experience" className="hover:text-primary">Experience</Link>
                         <Link href="#projects" className="hover:text-primary">Projects</Link>
-                        <Link href="#skills" className="hover:text-primary">Skills</Link>
+                        <Link href="#skills" className="hover:text-primary">Skills</Link> 
                     </nav>
                     <Button variant="ghost" size="icon" className="md:hidden">
                         <MenuIcon className="h-6 w-6" />
@@ -97,7 +97,7 @@ export function Portfolio() {
                                 role: "Senior Full Stack Developer",
                                 period: "2022 - Present",
                                 description: "Led development of multiple high-traffic web applications of renowned newspapers such as Sport.es and ElPeriodico.com, improving performance and applying hexagonal arquitecture.",
-                                technologies: ["Symfony", "Vue", "MongoDB", "Redis", "Git", "Nuxt", "Vagrant", "PostgreSQL"]
+                                technologies: ["Symfony", "Vue", "MongoDB", "Redis", "Git", "Nuxt", "Vagrant", "PostgreSQL", "RabbitMq"]
                             },
                             {
                                 company: "Ociotour Digital",
@@ -139,7 +139,7 @@ export function Portfolio() {
                                 name: "E-commerce Platform",
                                 description: "A full-stack e-commerce solution with Next.js, PostgreSql, Cloudinary and Docker.",
                                 image: "/projects/tesloshop.PNG?height=200&width=300",
-                                github: "https://github.com/samuelSoler99/ecommerce-platform",
+                                github: "https://github.com/samuelSoler99/next-14-tesla-shop",
                                 live: "https://next-14-tesla-shop.vercel.app/",
                                 technologies: ["Next", "PostgreSQL", "Stripe", "PrismaORM", "Tailwind", "Docker"]
                             },
@@ -199,7 +199,7 @@ export function Portfolio() {
                     <h2 className="text-3xl font-bold mb-8">Technologies & Skills</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {[
-                            "PHP", "Symfony", "Laravel", "JavaScript", "TypeScript", "React", "Next.js",
+                            "RabbitMq","PHP", "Symfony", "Laravel", "JavaScript", "TypeScript", "React", "Next.js",
                             "Node.js", "Express", "MongoDB", "PostgreSQL",
                             "Hexagonal Architecture", "REST APIs", "TDD",
                             "Tailwind CSS", "Git", "Docker", "AWS"
@@ -212,7 +212,7 @@ export function Portfolio() {
                 </section>
 
                 <section id="courses" className="pt-16 scroll-mt-16">
-                    <h2 className="text-3xl font-bold mb-8">Completed Udemy Courses</h2>
+                    <h2 className="text-3xl font-bold mb-8">Completed Courses</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {[
                             {
@@ -220,7 +220,16 @@ export function Portfolio() {
                                 instructor: "Fernando Herrera",
                                 completionDate: "March 2024",
                                 certificate: "UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa",
-                                certificateLink: "https://www.udemy.com/certificate/UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa/"
+                                certificateLink: "https://www.udemy.com/certificate/UC-40d2c884-e0bc-4eed-a365-f4c4e00eedfa/",
+                                courseLink: "https://www.udemy.com/course/nextjs-fh/?couponCode=ST7MT110524"
+                            },
+                            {
+                                title: "Añade Inteligencia Artificial siguiendo buenas prácticas (OpenAI GPT, Ollama y LangChain)",
+                                instructor: "Codely.com",
+                                completionDate: "October 2024",
+                                certificate: null,
+                                certificateLink: "/certificates/anade-inteligencia-artificial-siguiendo-buenas-practicas-openai-gpt-ollama-y-langchain.pdf",
+                                courseLink: "http://pro.codely.com/library/anade-inteligencia-artificial-siguiendo-buenas-practicas-openai-gpt-ollama-y-langchain-222393/"
                             },
                         ].map((course, index) => (
                             <Card key={index}>
@@ -228,12 +237,23 @@ export function Portfolio() {
                                     <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
                                     <p className="text-primary mb-1">Instructor: {course.instructor}</p>
                                     <p className="text-sm text-muted-foreground mb-2">Completed: {course.completionDate}</p>
-                                    <p className="text-sm mb-4">Certificate: {course.certificate}</p>
-                                    <Link href={course.certificateLink} target="_blank" rel="noopener noreferrer">
-                                        <Button variant="outline" size="sm">
-                                            <AwardIcon className="mr-2 h-4 w-4" /> View Certificate
-                                        </Button>
-                                    </Link>
+                                    {course.certificate && (
+                                        <p className="text-sm mb-4">Certificate: {course.certificate}</p>
+                                    )}
+                                    {course.certificateLink && (
+                                        <Link href={course.certificateLink} target="_blank" rel="noopener noreferrer" download>
+                                            <Button variant="outline" size="sm">
+                                                <AwardIcon className="mr-2 h-4 w-4" /> View Certificate
+                                            </Button>
+                                        </Link>
+                                    )}
+                                    {course.courseLink && (
+                                        <Link href={course.courseLink} target="_blank" rel="noopener noreferrer" className="ml-2">
+                                            <Button variant="outline" size="sm" className="mt-2">
+                                                <ExternalLinkIcon className="mr-2 h-4 w-4" /> Visit Course
+                                            </Button>
+                                        </Link>
+                                    )}
                                 </CardContent>
                             </Card>
                         ))}

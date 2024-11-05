@@ -78,6 +78,10 @@ export function TechLogo({name}: { name: string }) {
             src: "/logos/supabase.svg",
             alt: "Supabase"
         },
+        RabbitMq: {
+            src: "/logos/rabbitmq.svg",
+            alt: "RabbitMq"
+        }
     }
 
     return (
